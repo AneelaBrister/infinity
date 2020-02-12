@@ -18,14 +18,10 @@ export class ErrorShowerComponent implements OnInit {
 
 	show() {
 		this._changeDetector.detectChanges();
-		this._zone.runOutsideAngular(() => {
-			$('#errorshower').modal('show');
-		})
+		$('#errorshower').modal('show');
 	}
 
 	onClose() {
-		this._zone.runOutsideAngular(() => {
-			$('#errorshower').modal('hide');
-		})
+		$('#errorshower').modal('hide');
 	}
 }
