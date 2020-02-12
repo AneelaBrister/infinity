@@ -2,7 +2,9 @@
 
 This project demonstrates an infinite loop that locks up the browser upon a template binding error. 
 1. If you have a template binding error where a null object's property is being navigated to like this: 
-	*ngIf="bad.prop"
+```	
+	<div *ngIf="bad.prop"></div>
+```
 2. And you have a system-wide error handler that shows a bootstrap modal
 3. Trying to close the modal reporting the error will run change detection again
 4. Thereby triggering the error again, locking up the browser. 
