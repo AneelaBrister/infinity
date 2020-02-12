@@ -1,0 +1,27 @@
+  <div 
+    class="modal"
+    id="errorshower"
+    role="dialog" 
+    data-keyboard="false" 
+    data-backdrop="static"
+  >
+    <div 
+      class="modal-dialog" 
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-header text-danger">
+          {{(error$|async)?.name}}
+        </div>
+        <div class="modal-body text-danger">
+          {{(error$|async)?.message}}
+        </div>        
+				<div class="modal-footer">
+					<button
+						type="button"
+						class="btn"
+						(click)="onClose()">
+						Close</button>
+				</div>
+			</div>
+  </div>

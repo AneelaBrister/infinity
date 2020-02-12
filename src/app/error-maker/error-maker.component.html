@@ -1,0 +1,7 @@
+<div class="d-flex">
+	<button class="btn btn-primary mr-3" (click)="isError = !isError">Toggle Error</button>
+</div>
+<h4 *ngIf="isError" class="text-danger">Now with an Error</h4>
+<div *ngIf="isError">
+	<dd *ngIf="bad.fake">This will never show</dd>
+</div>

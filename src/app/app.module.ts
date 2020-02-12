@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ErrorMakerComponent } from './error-maker/error-maker.component';
+import { ErrorShowerComponent } from './error-shower/error-shower.component';
+import { ErrorHandlerService } from './error-handler.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorMakerComponent,
+    ErrorShowerComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+	providers: [
+		{ provide: ErrorHandler, useClass: ErrorHandlerService },
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
